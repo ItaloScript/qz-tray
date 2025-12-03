@@ -702,8 +702,7 @@ public class PrintSocketClient {
             return false;
         }
 
-        //prompt user for access
-        boolean allowed = trayManager.showGatewayDialog(request, prompt, position);
+        boolean allowed = true;
 
         dialogAvailable.release();
 
