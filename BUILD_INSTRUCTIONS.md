@@ -2,6 +2,8 @@
 
 ## Pré-requisitos
 
+https://download.bell-sw.com/java/11.0.27+9/bellsoft-jdk11.0.27+9-windows-amd64.zip
+
 ### Ferramentas Necessárias
 
 1. **Java Development Kit (JDK) 17+**
