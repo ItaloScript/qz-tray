@@ -90,7 +90,8 @@ public class RequestState {
     }
 
     public boolean hasBlockedCert() {
-        return certUsed == null || certUsed.isBlocked();
+        // Sempre retorna false para permitir requisições anônimas
+        return false;
     }
 
     public String getCertName() {

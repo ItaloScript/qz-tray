@@ -496,32 +496,9 @@ public class TrayManager {
     }
 
     public boolean showGatewayDialog(final RequestState request, final String prompt, final Point position) {
-        if (!headless) {
-            try {
-                SwingUtilities.invokeAndWait(() -> gatewayDialog.prompt("%s wants to " + prompt, request, position));
-            }
-            catch(Exception ignore) {}
-
-            if (gatewayDialog.isApproved()) {
-                log.info("Allowed {} to {}", request.getCertName(), prompt);
-                if (gatewayDialog.isPersistent()) {
-                    whiteList(request.getCertUsed());
-                }
-            } else {
-                log.info("Denied {} to {}", request.getCertName(), prompt);
-                if (gatewayDialog.isPersistent()) {
-                    if (!request.hasCertificate()) {
-                        anonymousItem.doClick(); // if always block anonymous requests -> flag menu item
-                    } else {
-                        blackList(request.getCertUsed());
-                    }
-                }
-            }
-
-            return gatewayDialog.isApproved();
-        } else {
-            return request.hasSavedCert();
-        }
+        // Sempre permitir requisições sem mostrar diálogo de confirmação
+        log.info("Auto-allowed {} to {}", request.getCertName(), prompt);
+        return true;
     }
 
     private void whiteList(Certificate cert) {

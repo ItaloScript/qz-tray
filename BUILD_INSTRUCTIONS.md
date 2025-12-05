@@ -187,3 +187,8 @@ Antes de distribuir o instalador:
 ---
 
 **Última atualização**: 4 de dezembro de 2025
+
+
+COMO PUBLICAR RELEASE
+
+gh release create v2.2.6-zero "out\qz-tray.exe" --title "QZ Tray v2.2.6 Zero" --notes "Versão customizada do QZ Tray com modificações personalizadas.`n`nInclui:`n- Instalador Windows completo (x86_64)`n- Assinatura digital self-signed`n- Todas as dependências incluídas"
